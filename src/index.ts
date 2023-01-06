@@ -1,4 +1,10 @@
 import { createConnection } from "typeorm";
+import * as dotenv from "dotenv";
+dotenv.config();
+
+import express from "express";
+
+console.log(process.env.DB_NAME);
 const main = async () => {
   try {
     await createConnection({
