@@ -1,0 +1,10 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "jameswafula",
+  "password": "undefined",
+  "database": "typeorm",
+  "entities": ["src/entity.*.ts"],
+  "synchronize": true
+}
