@@ -5,7 +5,6 @@ import {
   UpdateDateColumn,
   ManyToMany,
   JoinTable,
-  JoinColumn,
 } from "typeorm";
 import { Client } from "./Client";
 import { Person } from "./utils/Person";
