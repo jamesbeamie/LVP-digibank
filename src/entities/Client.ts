@@ -1,4 +1,14 @@
-import { Entity, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import {
+  Entity,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+  OneToMany,
+  ManyToMany,
+  JoinTable,
+} from "typeorm";
+import { Banker } from "./Banker";
+import { Transactions } from "./Transaction";
 import { Person } from "./utils/Person";
 
 @Entity("client")
@@ -29,6 +39,12 @@ export class Client extends Person {
   })
   family_members: string[];
 
+  @OneToMany(() => Transactions, (transactions) => transactions.client)
+  transactions: Transactions[];
+
+  @ManyToMany(() => Banker)
+  bankers: Banker[];
+  @JoinTable({})
   @CreateDateColumn()
   created_at: Date;
 

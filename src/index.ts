@@ -5,6 +5,7 @@ dotenv.config();
 import express from "express";
 import { Client } from "./entities/Client";
 import { Banker } from "./entities/Banker";
+import { Transactions } from "./entities/Transaction";
 
 const main = async () => {
   try {
@@ -16,7 +17,7 @@ const main = async () => {
       username: "jameswafula",
       password: undefined,
       database: "typeorm",
-      entities: [Client, Banker],
+      entities: [Client, Banker, Transactions],
       synchronize: true,
     });
     console.log("connected to pg db");
